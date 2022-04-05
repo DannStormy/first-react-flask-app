@@ -1,0 +1,17 @@
+.color-nav {
+  background-color: rgb(62, 173, 136);
+}
+
+.link-text {
+  color: white;
+}
+
+.form {
+  width: 50%;
+  padding: 10px;
+}
+
+.custom {
+  background-color: rgb(62, 173, 136) !important;
+  border: 1px solid whitesmoke !important;
+}
