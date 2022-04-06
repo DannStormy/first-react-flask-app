@@ -26,7 +26,7 @@ export default function Note() {
             })
     }, [])
     function deleteNote(noteid) {
-        fetch('api/delete-note', {
+        fetch('https://notell.herokuapp.com/api/delete-note', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem("token")}`,
