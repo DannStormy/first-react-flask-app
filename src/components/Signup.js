@@ -62,7 +62,7 @@ export default function SignupForm() {
                 password: values.password,
                 retypePassword: values.retypePassword
             };
-            fetch('https://notell.herokuapp.com/sign-up', {
+            fetch('api/sign-up', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -14,7 +14,7 @@ export const AddNotes = () => {
             note: note,
             status: status
         }
-        fetch('https://notell.herokuapp.com/addnote', {
+        fetch('api/addnote', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem("token")}`,
