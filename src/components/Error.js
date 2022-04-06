@@ -7,7 +7,7 @@ export const DisplayError = ({
     children,
 }) => {
     if (!token) {
-        alert("You're not authorized to access this page")
+        alert("You are not authorized to access this page")
         return <Navigate to={redirectPath} replace />;
     }
 
