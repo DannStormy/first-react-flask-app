@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
-import { useNavigate } from 'react-router-dom'
-import { Navbar, Container, Nav } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom';
+import { Navbar, Container, Nav } from 'react-bootstrap';
 
 const validate = values => {
     const errors = {};
