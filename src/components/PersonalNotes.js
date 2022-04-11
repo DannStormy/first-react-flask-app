@@ -9,7 +9,7 @@ export default function Note() {
     const [notes, setNotes] = useState([]);
     const navigate = useNavigate()
     useEffect(() => {
-        fetch('https://notell.herokuapp.com/api/mynotes', {
+        fetch(`${process.env.REACT_APP_SERVER_URL}/api/mynotes`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem("token")}`,
@@ -26,7 +26,7 @@ export default function Note() {
             })
     }, [])
     function deleteNote(noteid) {
-        fetch('https://notell.herokuapp.com/api/delete-note', {
+        fetch(`${process.env.REACT_APP_SERVER_URL}/api/delete-note`, {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem("token")}`,

@@ -8,7 +8,7 @@ export default function Note() {
     const [notes, setNotes] = useState([]);
     const navigate = useNavigate()
     useEffect(() => {
-        fetch('https://notell.herokuapp.com/api/notesfeed', {
+        fetch(`${process.env.REACT_APP_SERVER_URL}/api/notesfeed`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem("token")}`,
