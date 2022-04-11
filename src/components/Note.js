@@ -1,4 +1,4 @@
-import { React, useContext, useEffect, useState } from 'react';
+import { React, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import { Card } from 'react-bootstrap'
 
@@ -17,12 +17,13 @@ export default function Note() {
         })
             .then(response => response.json())
             .then(response => {
-                if (response.msg == 'Token has expired') {
+                if (response.msg === 'Token has expired') {
                     navigate('/login')
                 } else {
                     setNotes(response)
                 }
             })
+        // eslint-disable-next-line
     }, [])
     return (
         <>
@@ -39,16 +40,18 @@ export default function Note() {
                                         {eachNote.data}{' '}
                                     </p>
                                     <footer className="blockquote-footer">
-                                        {eachNote.user_id}
+                                        {eachNote.owner}
                                     </footer>
                                 </blockquote>
                             </Card.Body>
                         </Card>
                     )
                 } else {
-                    <Card key={eachNote.id}>
-                        <Card.Body>Sorry, no stories to see at this time.</Card.Body>
-                    </Card>
+                    return (
+                        <Card key={eachNote.id}>
+                            <Card.Body>Sorry, no stories to see at this time.</Card.Body>
+                        </Card>
+                    )
                 }
             })}
         </>

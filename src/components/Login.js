@@ -47,8 +47,8 @@ export default function Login() {
                 .then(response => response.json())
                 .then(data => {
                     console.log('Success:', data);
-                    const token = localStorage.setItem("token", data.access_token)
-                    const user = localStorage.setItem("user", data.username)
+                    localStorage.setItem("token", data.access_token)
+                    localStorage.setItem("user", data.username)
                     alert("Login Successful")
                     navigate('/notesfeed')
                 })

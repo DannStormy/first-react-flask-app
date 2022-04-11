@@ -1,4 +1,4 @@
-import { React, useContext, useEffect, useState } from 'react';
+import { React, useEffect, useState } from 'react';
 import { Card, ListGroup, Button } from 'react-bootstrap'
 import { Trash } from 'react-bootstrap-icons';
 import { useNavigate } from 'react-router-dom';
@@ -18,12 +18,13 @@ export default function Note() {
         })
             .then(response => response.json())
             .then(response => {
-                if (response.msg == 'Token has expired') {
+                if (response.msg === 'Token has expired') {
                     navigate('/login')
                 } else {
                     setNotes(response)
                 }
             })
+        // eslint-disable-next-line
     }, [])
     function deleteNote(noteid) {
         fetch(`${process.env.REACT_APP_SERVER_URL}/api/delete-note`, {
@@ -51,7 +52,7 @@ export default function Note() {
                     <Card.Body>
                         No notes to see at this time
                         <Button style={{ 'float': 'right' }} className='custom' href="/addnote">Add One</Button>
-                        </Card.Body>
+                    </Card.Body>
                 </Card> : notes.map(eachNote => {
                     return (
                         <Card key={eachNote.id} style={{ 'width': '50rem' }}>
