@@ -20,6 +20,7 @@ export default function Note() {
                 if (response.msg === 'Token has expired') {
                     navigate('/login')
                 } else {
+                    console.log(response)
                     setNotes(response)
                 }
             })
@@ -46,7 +47,7 @@ export default function Note() {
                             </Card.Body>
                         </Card>
                     )
-                } else {
+                } else if (notes.length < 1) {
                     return (
                         <Card key={eachNote.id}>
                             <Card.Body>Sorry, no stories to see at this time.</Card.Body>
