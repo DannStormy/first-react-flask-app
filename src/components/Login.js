@@ -37,7 +37,7 @@ export default function Login() {
                 username: values.username,
                 password: values.password
             }
-            fetch('https://notell.herokuapp.com/api/login', {
+            fetch(`${process.env.REACT_APP_SERVER_URL}/api/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

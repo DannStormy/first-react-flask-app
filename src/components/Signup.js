@@ -62,7 +62,7 @@ export default function SignupForm() {
                 password: values.password,
                 retypePassword: values.retypePassword
             };
-            fetch('api/sign-up', {
+            fetch(`${process.env.REACT_APP_SERVER_URL}/api/sign-up`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
