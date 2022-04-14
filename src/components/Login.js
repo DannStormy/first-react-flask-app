@@ -1,4 +1,5 @@
 import { React } from 'react';
+
 import { useNavigate } from "react-router-dom";
 
 import { useFormik } from 'formik';
@@ -11,12 +12,12 @@ const validate = values => {
     const errors = {};
 
     if (!values.username) {
-        errors.username = 'Required';
+        errors.username = 'Required!';
     } else if (values.username.length > 20) {
         errors.username = 'Must be 20 characters or less';
     }
     if (!values.password) {
-        errors.password = 'Required';
+        errors.password = 'Required!';
     } else if (values.password.length < 5) {
         errors.password = 'Must be up to 5 characters';
     }
@@ -61,16 +62,16 @@ export default function Login() {
         <>
             <Navbar className="color-nav" bg="" variant="">
                 <Container>
-                    <Navbar.Brand style={{ 'color': 'whitesmoke' }} href="/">Notels!</Navbar.Brand>
+                    <Navbar.Brand style={{ 'color': '#9e834b' }} href="/">NOTELS!</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link style={{ 'color': 'whitesmoke' }} href="/login">Login</Nav.Link>
-                        <Nav.Link style={{ 'color': 'whitesmoke' }} href="/sign-up">Register</Nav.Link>
+                        <Nav.Link style={{ 'color': '#9e834b' }} href="/login">LOGIN</Nav.Link>
+                        <Nav.Link style={{ 'color': '#9e834b' }} href="/sign-up">REGISTER</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
-            <form onSubmit={formik.handleSubmit}>
-                <label htmlFor="username">Username</label>
+            <form className='form' onSubmit={formik.handleSubmit}>
                 <input
+                    placeholder="Username"
                     id="username"
                     name="username"
                     type="text"
@@ -79,10 +80,11 @@ export default function Login() {
                     value={formik.values.username}
                 />
                 {formik.touched.email && formik.errors.email ? (
-                    <div>{formik.errors.email}</div>
+                    <div className="error">{formik.errors.email}</div>
                 ) : null}
-                <label htmlFor="password">Password</label>
+                <br />
                 <input
+                    placeholder="Password"
                     id="password"
                     name="password"
                     type="password"
@@ -91,9 +93,10 @@ export default function Login() {
                     value={formik.values.password}
                 />
                 {formik.touched.password && formik.errors.password ? (
-                    <div>{formik.errors.password}</div>
+                    <div className="error">{formik.errors.password}</div>
                 ) : null}
-                <button type="submit">Submit</button>
+                <br />
+                <button role="button" type="submit">LOGIN</button>
             </form>
         </>
 

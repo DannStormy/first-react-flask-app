@@ -46,25 +46,26 @@ export default function Note() {
     return (
         <>
             <Navigation />
-            <Card.Header>Your Notes</Card.Header>
+            <Card.Header className="card">Your Notes</Card.Header>
             {
                 notes.length < 1 ? <Card>
                     <Card.Body>
                         No notes to see at this time
-                        <Button style={{ 'float': 'right' }} className='custom' href="/addnote">Add One</Button>
+                        <Button style={{ 'float': 'right', 'backgroundColor': '#463932', 'border': '0' }} href="/addnote">Add One</Button>
                     </Card.Body>
                 </Card> : notes.map(eachNote => {
                     return (
-                        <Card key={eachNote.id} style={{ 'width': '50rem' }}>
+                        <Card key={eachNote.id}>
                             <ListGroup variant="flush">
-                                <ListGroup.Item>
+                                <ListGroup.Item style={{ 'backgroundColor': '#ede5df' }}>
                                     {eachNote.data}
-                                    <Button
-                                        style={{ 'width': '2rem', 'float': 'right' }}
+                                    <button
+                                        className="button"
+                                        style={{ 'width': '2rem', 'float': 'right', 'border': '1px solid #f44336', 'padding': '5px' }}
                                         onClick={() => { deleteNote(eachNote.id) }}
                                         variant="">
-                                        <Trash color="rgb(42, 141, 108)" />
-                                    </Button>
+                                        <Trash color="#f44336" />
+                                    </button>
                                 </ListGroup.Item>
                             </ListGroup>
                         </Card>

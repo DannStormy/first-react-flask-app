@@ -1,3 +1,5 @@
+import { Helmet } from 'react-helmet';
+
 import "./App.css";
 import AllRoutes from './Routes';
 import LoginContextProvider from './contexts/LoginContext';
@@ -6,11 +8,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <LoginContextProvider>
-      <div className="App">
-        <AllRoutes />
-      </div>
-    </LoginContextProvider>
+    <>
+      <LoginContextProvider>
+        <div className="App">
+          <Helmet>
+            <style>{'body { background-color: #61554E }'}</style>
+          </Helmet>
+
+          <AllRoutes />
+        </div>
+      </LoginContextProvider>
+    </>
+
+
   );
 }
 

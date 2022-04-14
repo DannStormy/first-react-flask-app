@@ -7,33 +7,33 @@ const validate = values => {
     const errors = {};
 
     if (!values.firstName) {
-        errors.firstName = 'Required';
+        errors.firstName = 'Required!';
     } else if (values.firstName.length > 15) {
         errors.firstName = 'Must be 15 characters or less';
     }
 
     if (!values.lastName) {
-        errors.lastName = 'Required';
+        errors.lastName = 'Required!';
     } else if (values.lastName.length > 20) {
         errors.lastName = 'Must be 20 characters or less';
     }
     if (!values.username) {
-        errors.username = 'Required';
+        errors.username = 'Required!';
     } else if (values.username.length > 20) {
         errors.username = 'Must be 20 characters or less';
     }
     if (!values.email) {
-        errors.email = 'Required';
+        errors.email = 'Required!';
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
         errors.email = 'Invalid email address';
     }
     if (!values.password) {
-        errors.password = 'Required';
+        errors.password = 'Required!';
     } else if (values.password.length < 5) {
         errors.password = 'Must be up to 5 characters';
     }
     if (!values.retypePassword) {
-        errors.retypePassword = 'Required';
+        errors.retypePassword = 'Required!';
     } else if (values.password !== values.retypePassword) {
         errors.retypePassword = 'Passwords do not match';
     }
@@ -85,16 +85,16 @@ export default function SignupForm() {
         <>
             <Navbar className="color-nav" bg="" variant="">
                 <Container>
-                    <Navbar.Brand style={{ 'color': 'whitesmoke' }} href="/">Notels!</Navbar.Brand>
+                    <Navbar.Brand style={{ 'color': '#9e834b' }} href="/">NOTELS!</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link style={{ 'color': 'whitesmoke' }} href="/login">Login</Nav.Link>
-                        <Nav.Link style={{ 'color': 'whitesmoke' }} href="/sign-up">Register</Nav.Link>
+                        <Nav.Link style={{ 'color': '#9e834b' }} href="/login">LOGIN</Nav.Link>
+                        <Nav.Link style={{ 'color': '#9e834b' }} href="/sign-up">REGISTER</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
-            <form onSubmit={formik.handleSubmit}>
-                <label htmlFor="firstName">First Name</label>
+            <form className="form" onSubmit={formik.handleSubmit}>
                 <input
+                    placeholder="First Name"
                     id="firstName"
                     name="firstName"
                     type="text"
@@ -103,11 +103,11 @@ export default function SignupForm() {
                     value={formik.values.firstName}
                 />
                 {formik.touched.firstName && formik.errors.firstName ? (
-                    <div>{formik.errors.firstName}</div>
+                    <div className="error">{formik.errors.firstName}</div>
                 ) : null}
-
-                <label htmlFor="lastName">Last Name</label>
+                <br />
                 <input
+                    placeholder="Last Name"
                     id="lastName"
                     name="lastName"
                     type="text"
@@ -116,10 +116,11 @@ export default function SignupForm() {
                     value={formik.values.lastName}
                 />
                 {formik.touched.lastName && formik.errors.lastName ? (
-                    <div>{formik.errors.lastName}</div>
+                    <div className="error">{formik.errors.lastName}</div>
                 ) : null}
-                <label htmlFor="username">Username</label>
+                <br />
                 <input
+                    placeholder="Username"
                     id="username"
                     name="username"
                     type="text"
@@ -128,11 +129,11 @@ export default function SignupForm() {
                     value={formik.values.username}
                 />
                 {formik.touched.username && formik.errors.username ? (
-                    <div>{formik.errors.username}</div>
+                    <div className="error">{formik.errors.username}</div>
                 ) : null}
-
-                <label htmlFor="email">Email Address</label>
+                <br />
                 <input
+                    placeholder="Email"
                     id="email"
                     name="email"
                     type="email"
@@ -141,10 +142,11 @@ export default function SignupForm() {
                     value={formik.values.email}
                 />
                 {formik.touched.email && formik.errors.email ? (
-                    <div>{formik.errors.email}</div>
+                    <div className="error">{formik.errors.email}</div>
                 ) : null}
-                <label htmlFor="password">Password</label>
+                <br />
                 <input
+                    placeholder="Password"
                     id="password"
                     name="password"
                     type="password"
@@ -153,10 +155,11 @@ export default function SignupForm() {
                     value={formik.values.password}
                 />
                 {formik.touched.password && formik.errors.password ? (
-                    <div>{formik.errors.password}</div>
+                    <div className="error">{formik.errors.password}</div>
                 ) : null}
-                <label htmlFor="retypePassword">Retype Password</label>
+                <br />
                 <input
+                    placeholder="Retype Password"
                     id="retypePassword"
                     name="retypePassword"
                     type="password"
@@ -165,10 +168,10 @@ export default function SignupForm() {
                     value={formik.values.retypePassword}
                 />
                 {formik.touched.retypePassword && formik.errors.retypePassword ? (
-                    <div>{formik.errors.retypePassword}</div>
+                    <div className="error">{formik.errors.retypePassword}</div>
                 ) : null}
-
-                <button type="submit">Submit</button>
+                <br />
+                <button type="submit">SUBMIT</button>
             </form>
         </>
     );

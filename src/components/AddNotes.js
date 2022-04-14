@@ -40,7 +40,7 @@ export const AddNotes = () => {
             <Navigation />
             <Form className="form">
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                    <Form.Label>Hey, you got this :) </Form.Label>
+                    <Form.Label style={{ 'color': '#ede5df' }}>Type something..</Form.Label>
                     <Form.Control className="textarea" name="addNote"
                         type="text"
                         //id="CommentsOrAdditionalInformation"
@@ -48,13 +48,21 @@ export const AddNotes = () => {
                         onChange={e => addNote(e.target.value)}
                         as="textarea" rows={3} />
                 </Form.Group>
-                <Form.Check
+                <Form.Check className="switch"
+                    style={{ 'color': '#ede5df' }}
                     type="switch"
+                    label="Feature note on feed"
                     id="custom-switch"
-                    label="Feature your note?"
                     onChange={e => setStatus(e.target.checked)}
                 />
-                <Button className='custom' onClick={handleSubmit}>Create Note</Button>
+                <Button
+                    style={{
+                        'backgroundColor': '#ede5df',
+                        'border': '0',
+                        'color': '#9e834b',
+                        'font-size': '14px'
+                    }}
+                    onClick={handleSubmit}>CREATE NOTE</Button>
             </Form>
         </>
     )

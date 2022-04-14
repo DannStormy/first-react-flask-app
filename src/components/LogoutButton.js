@@ -13,6 +13,17 @@ export default function LogoutButton() {
     }
 
     return (
-        <Button onClick={logout} className="custom">Logout</Button>
+        <Button style=
+            {{
+                'backgroundColor': '#463932',
+                'border': '0',
+                'color': '#9e834b',
+                'width': '70px',
+                'margin-left': '20px',
+                'float': 'right'
+            }}
+            onClick={logout}
+            className=""
+        >Logout</Button>
     )
 }

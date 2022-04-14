@@ -29,18 +29,18 @@ export default function Note() {
     return (
         <>
             <Navigation />
-            <Card.Header>Featured Notes</Card.Header>
+            <Card.Header className="card">Featured Notes</Card.Header>
             {notes.map(eachNote => {
                 if (eachNote.can_view_records) {
                     return (
-                        <Card key={eachNote.id}>
+                        <Card className="card" style={{ 'box-shadow': '2px 2px #9e834b' }} key={eachNote.id}>
                             <Card.Body>
                                 <blockquote className="blockquote mb-0">
                                     <p>
                                         {' '}
                                         {eachNote.data}{' '}
                                     </p>
-                                    <footer className="blockquote-footer">
+                                    <footer style={{ 'color': '#5a4b47' }} className="blockquote-footer">
                                         {eachNote.owner}
                                     </footer>
                                 </blockquote>
