@@ -1,9 +1,10 @@
-import { React, useContext } from 'react';
+import { React } from 'react';
 
 import Login from './components/Login';
 import SignupForm from './components/Signup';
 import Note from './components/Note';
 import PersonalNotes from './components/PersonalNotes';
+import { Homepage } from './components/Homepage';
 import { DisplayError } from './components/Error.js';
 import { AddNotes } from './components/AddNotes';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
@@ -25,6 +26,7 @@ export default function AllRoutes() {
                     <Route path="addnote" element={<AddNotes />} />
                     <Route path="mynotes" element={<PersonalNotes />} />
                 </Route>
+                <Route path="/" element={<Homepage />} />
                 <Route path="notesfeed" element={<Note />} />
                 <Route path="sign-up" element={<SignupForm />} />
                 <Route path="login" element={<Login />} />

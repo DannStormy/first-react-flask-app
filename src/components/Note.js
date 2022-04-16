@@ -33,6 +33,8 @@ export default function Note() {
             {notes.map(eachNote => {
                 if (eachNote.can_view_records) {
                     return (
+                        // eslint-disable-next-line
+
                         <Card className="card" style={{ 'box-shadow': '2px 2px #9e834b' }} key={eachNote.id}>
                             <Card.Body>
                                 <blockquote className="blockquote mb-0">
@@ -49,6 +51,7 @@ export default function Note() {
                     )
                 } else if (notes.length < 1) {
                     return (
+                        // eslint-disable-next-line
                         <Card key={eachNote.id}>
                             <Card.Body>Sorry, no stories to see at this time.</Card.Body>
                         </Card>

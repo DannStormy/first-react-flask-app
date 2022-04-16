@@ -85,7 +85,7 @@ export default function SignupForm() {
         <>
             <Navbar className="color-nav" bg="" variant="">
                 <Container>
-                    <Navbar.Brand style={{ 'color': '#9e834b' }} href="/">NOTELS!</Navbar.Brand>
+                    <Navbar.Brand style={{ 'color': '#9e834b' }} href="/">NOTELL</Navbar.Brand>
                     <Nav className="me-auto">
                         <Nav.Link style={{ 'color': '#9e834b' }} href="/login">LOGIN</Nav.Link>
                         <Nav.Link style={{ 'color': '#9e834b' }} href="/sign-up">REGISTER</Nav.Link>

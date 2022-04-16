@@ -1,6 +1,6 @@
-import { React, useContext, useEffect } from 'react';
+import { React } from 'react';
 import { useNavigate } from 'react-router-dom'
-
+import { BoxArrowLeft } from 'react-bootstrap-icons';
 import { Button } from 'react-bootstrap'
 
 
@@ -18,12 +18,12 @@ export default function LogoutButton() {
                 'backgroundColor': '#463932',
                 'border': '0',
                 'color': '#9e834b',
-                'width': '70px',
+                'width': '100px',
                 'margin-left': '20px',
                 'float': 'right'
             }}
             onClick={logout}
             className=""
-        >Logout</Button>
+        >Logout   <BoxArrowLeft /></Button>
     )
 }
