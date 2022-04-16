@@ -85,7 +85,7 @@ button:focus {
   margin-left: auto !important;
   margin-right: auto !important;
   margin-top: 10px;
-  width: 70%;
+  width: 90%;
 }
 
 .personal-card {
@@ -103,6 +103,8 @@ button:focus {
   float: right;
   top: 25%;
   right: 5%;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
 }
 
 .intro {

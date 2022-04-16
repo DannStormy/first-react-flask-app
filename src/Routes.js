@@ -7,6 +7,7 @@ import PersonalNotes from './components/PersonalNotes';
 import { Homepage } from './components/Homepage';
 import { DisplayError } from './components/Error.js';
 import { AddNotes } from './components/AddNotes';
+import { NotFound } from './components/NotFound';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 
@@ -31,6 +32,7 @@ export default function AllRoutes() {
                 <Route path="sign-up" element={<SignupForm />} />
                 <Route path="login" element={<Login />} />
                 <Route path="logout" element={<Navigate to="login" />} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
         </Router>
     )
