@@ -19,6 +19,7 @@ export default function Note() {
             .then(response => response.json())
             .then(response => {
                 if (response.msg === 'Token has expired') {
+                    alert('Token has expired, login')
                     navigate('/login')
                 } else {
                     setNotes(response)

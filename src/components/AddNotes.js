@@ -6,6 +6,7 @@ import { Form, Button } from 'react-bootstrap';
 import Navigation from "./Navbar";
 
 export const AddNotes = () => {
+    const token = localStorage.getItem("token")
     const [note, addNote] = useState("")
     const [status, setStatus] = useState(false)
     const navigate = useNavigate()
