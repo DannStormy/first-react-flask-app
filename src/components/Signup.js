@@ -69,16 +69,17 @@ export default function SignupForm() {
                 },
                 body: JSON.stringify(data),
             })
+                .then(data => data.json())
                 .then(data => {
-                    console.log('Success:', data);
+                    alert(data.msg);
+                    if (data.msg === 'Registered Successfully') {
+                        navigate('/login')
+                    }
                 })
                 .catch((error) => {
                     alert(error)
                     console.error('Error:', error);
                 });
-            alert("Registered Successfully")
-            navigate('/login')
-
         },
     });
     return (

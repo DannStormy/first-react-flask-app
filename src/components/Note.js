@@ -35,7 +35,7 @@ export default function Note() {
                     return (
                         // eslint-disable-next-line
 
-                        <Card className="card" style={{ 'box-shadow': '2px 2px #9e834b' }} key={eachNote.id}>
+                        <Card className="card" style={{ 'boxShadow': '2px 2px #9e834b' }} key={eachNote.id}>
                             <Card.Body>
                                 <blockquote className="blockquote mb-0">
                                     <p>

@@ -9,6 +9,7 @@ export default function LogoutButton() {
     const navigate = useNavigate()
     function logout() {
         localStorage.clear();
+        alert('Logged out')
         navigate('/login');
     }
 
@@ -19,7 +20,7 @@ export default function LogoutButton() {
                 'border': '0',
                 'color': '#9e834b',
                 'width': '100px',
-                'margin-left': '20px',
+                'marginLeft': '20px',
                 'float': 'right'
             }}
             onClick={logout}

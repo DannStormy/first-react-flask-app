@@ -27,14 +27,14 @@ export const AddNotes = () => {
             .then(data => {
                 if (data.error) {
                     alert("note cannot be empty")
-                    navigate('/addnote')
+                    //navigate('/addnote')
                 } else {
                     alert("Note added!")
+                    navigate('/mynotes')
                     console.log("Success: ", data)
                 }
             })
             .catch(error => console.log("Error: ", error))
-        navigate('/mynotes')
     }
     return (
         <>
@@ -61,7 +61,7 @@ export const AddNotes = () => {
                         'backgroundColor': '#ede5df',
                         'border': '0',
                         'color': '#9e834b',
-                        'font-size': '14px'
+                        'fontSize': '14px'
                     }}
                     onClick={handleSubmit}>CREATE NOTE</Button>
             </Form>

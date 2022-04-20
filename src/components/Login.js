@@ -47,11 +47,12 @@ export default function Login() {
             })
                 .then(response => response.json())
                 .then(data => {
-                    console.log('Success:', data);
                     localStorage.setItem("token", data.access_token)
                     localStorage.setItem("user", data.username)
-                    alert("Login Successful")
-                    navigate('/notesfeed')
+                    alert(data.msg);
+                    if (data.msg === 'Login Successful') {
+                        navigate('/notesfeed')
+                    }
                 })
                 .catch((error) => {
                     console.error('Error:', error);

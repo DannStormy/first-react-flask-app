@@ -12,7 +12,7 @@ export default function Navigation() {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav fill variant="tabs" className="me-auto">
-                            <Nav.Link style={{ 'color': '#9e834b' }} href="/notesfeed">FEED`</Nav.Link>
+                            <Nav.Link style={{ 'color': '#9e834b' }} href="/notesfeed">FEED</Nav.Link>
                             <Nav.Link style={{ 'color': '#9e834b' }} href="/mynotes">MY-NOTES</Nav.Link>
                             <Nav.Link style={{ 'color': '#9e834b' }} href="/addnote">ADD NOTE</Nav.Link>
                         </Nav>
