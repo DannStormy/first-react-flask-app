@@ -9,7 +9,7 @@ export default function Navigation() {
         <>
             <Navbar collapseOnSelect expand="lg" className="color-nav">
                 <Container className="nav-links">
-                    <Navbar.Brand style={{ 'color': '#463932' }} href="/">NOTELL!</Navbar.Brand>
+                    <Navbar.Brand style={{ 'color': '#463932' }} href="/">N<JournalText color="#463932" />TELL!</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav fill variant="tabs" className="me-auto">
