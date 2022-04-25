@@ -38,7 +38,7 @@ export default function Note() {
                         <Card className="card" style={{ 'boxShadow': '2px 2px #9e834b' }} key={eachNote.id}>
                             <Card.Body>
                                 <blockquote className="blockquote mb-0">
-                                    <p>
+                                    <p style={{ 'fontSize': '16px' }}>
                                         {' '}
                                         {eachNote.data}{' '}
                                     </p>

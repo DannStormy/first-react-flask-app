@@ -58,7 +58,7 @@ export default function Note() {
                     return (
                         <Card key={eachNote.id}>
                             <ListGroup variant="flush">
-                                <ListGroup.Item style={{ 'backgroundColor': '#ede5df' }}>
+                                <ListGroup.Item style={{ 'backgroundColor': '#ede5df', 'color': '#463932' }}>
                                     {eachNote.data}
                                     <button
                                         className="button"

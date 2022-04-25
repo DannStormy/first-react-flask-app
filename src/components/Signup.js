@@ -1,5 +1,6 @@
 import React from 'react';
 import { useFormik } from 'formik';
+import { JournalText } from 'react-bootstrap-icons';
 import { useNavigate } from 'react-router-dom';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 
@@ -86,10 +87,10 @@ export default function SignupForm() {
         <>
             <Navbar className="color-nav" bg="" variant="">
                 <Container>
-                    <Navbar.Brand style={{ 'color': '#9e834b' }} href="/">NOTELL!</Navbar.Brand>
+                    <Navbar.Brand style={{ 'color': '#463932' }} href="/">N<JournalText style={{ 'display': 'inline-block' }} width="4.5%" height="4.5%" color="#463932" />TELL!</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link style={{ 'color': '#9e834b' }} href="/login">LOGIN</Nav.Link>
-                        <Nav.Link style={{ 'color': '#9e834b' }} href="/sign-up">REGISTER</Nav.Link>
+                        <Nav.Link style={{ 'color': '#463932' }} href="/login">LOGIN</Nav.Link>
+                        <Nav.Link style={{ 'color': '#463932' }} href="/sign-up">REGISTER</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>

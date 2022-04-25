@@ -80,22 +80,12 @@ button:focus {
 
 .card {
   background-color: #ede5df !important;
-  color: #9e834b !important;
+  color: #463932 !important;
   display: block !important;
   margin-left: auto !important;
   margin-right: auto !important;
   margin-top: 10px;
   width: 90%;
-}
-
-.personal-card {
-  background-color: red !important;
-  color: #9e834b !important;
-  display: block !important;
-  margin-left: 25% !important;
-  margin-right: auto !important;
-  margin-top: 10px;
-  width: 50%;
 }
 
 .journal {

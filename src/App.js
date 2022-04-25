@@ -12,7 +12,7 @@ function App() {
       <LoginContextProvider>
         <div className="App">
           <Helmet>
-            <style>{'body { background-color: #61554E }'}</style>
+            <style>{'body { background-color: #463932}'}</style>
           </Helmet>
 
           <AllRoutes />
