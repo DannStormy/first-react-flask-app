@@ -8,7 +8,6 @@ export const Homepage = () => {
             <h1 className="intro">Write out a thought with Notell!</h1>
             <ul>
                 <li className="list">Make Personal Notes</li>
-                <li className="list">Check out notes from others and find like minds</li>
                 <li className="list">A Feature Feed to let others see your notes!</li>
             </ul>
             <p style={{ 'color': '#faece2', 'margin': '30px' }}><a className="link-b" href="/login">Login</a> or <a className="link-b" href="/sign-up">Register</a> to get started.</p>
