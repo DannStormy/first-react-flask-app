@@ -17,6 +17,13 @@
   margin-top: 5%;
 }
 
+.homepage {
+  font-family: "Roboto Mono", monospace;
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+}
+
 input[type="text"],
 input[type="password"],
 input[type="email"] {
@@ -89,28 +96,20 @@ button:focus {
 }
 
 .journal {
-  position: absolute;
-  float: right;
-  top: 25%;
-  right: 5%;
-  filter: blur(8px);
-  -webkit-filter: blur(8px);
+  color: #ede5df;
+  width: 10%;
+  height: 10%;
 }
 
 .intro {
-  display: inline-block;
-  font-family: "M PLUS Rounded 1c", sans-serif;
   color: #ede5df;
-  margin: 30px;
-  margin-right: 50%;
-  margin-bottom: 5px;
-  width: 20%;
+  font-size: 50px;
+  margin-bottom: 10px;
 }
 
 .list {
   font-size: 25px;
-  font-family: "M PLUS Rounded 1c", sans-serif;
-  list-style-type: square;
+  list-style-type: none;
   color: #faece2;
   margin: 30px;
 }
