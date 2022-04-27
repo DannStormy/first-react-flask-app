@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 export const Homepage = () => {
     const navigate = useNavigate()
     return (
-        <div style={{ 'position': 'relative' }}>
-            <h1 className="intro">Write out a thought with Notell!</h1>
+        <div style={{}}>
+            <h1 className="intro">NOTELL!</h1>
             <ul>
                 <li className="list">Make Personal Notes</li>
                 <li className="list">Check out notes from others and find like minds</li>
