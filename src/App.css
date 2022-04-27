@@ -99,7 +99,7 @@ button:focus {
 
 .intro {
   display: inline-block;
-  font-family: "Square Peg", cursive;
+  font-family: "M PLUS Rounded 1c", sans-serif;
   color: #ede5df;
   margin: 30px;
   margin-right: 50%;
@@ -109,7 +109,7 @@ button:focus {
 
 .list {
   font-size: 25px;
-  font-family: "Square Peg", cursive;
+  font-family: "M PLUS Rounded 1c", sans-serif;
   list-style-type: square;
   color: #faece2;
   margin: 30px;
