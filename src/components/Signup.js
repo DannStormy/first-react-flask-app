@@ -1,8 +1,10 @@
-import React from 'react';
+import { React, useState } from 'react';
 import { useFormik } from 'formik';
 import { JournalText } from 'react-bootstrap-icons';
 import { useNavigate } from 'react-router-dom';
 import { Navbar, Container, Nav } from 'react-bootstrap';
+
+import { Loading } from "./SpinningLoader";
 
 const validate = values => {
     const errors = {};
@@ -44,6 +46,10 @@ const validate = values => {
 
 export default function SignupForm() {
     const navigate = useNavigate()
+    const [loading, setLoading] = useState({
+        load: false,
+        disable: false
+    })
     const formik = useFormik({
         initialValues: {
             firstName: '',
@@ -63,6 +69,16 @@ export default function SignupForm() {
                 password: values.password,
                 retypePassword: values.retypePassword
             };
+            setLoading({
+                load: true,
+                disable: true
+            })
+            setTimeout(() => {
+                setLoading({
+                    load: false,
+                    disable: false
+                })
+            }, 3000);
             fetch(`${process.env.REACT_APP_SERVER_URL}/api/sign-up`, {
                 method: 'POST',
                 headers: {
@@ -174,6 +190,8 @@ export default function SignupForm() {
                 ) : null}
                 <br />
                 <button type="submit">SUBMIT</button>
+                <br />
+                {loading.load ? <Loading /> : null}
             </form>
         </>
     );

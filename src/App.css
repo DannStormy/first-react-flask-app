@@ -97,13 +97,13 @@ button:focus {
 
 .journal {
   color: #ede5df;
-  width: 10%;
-  height: 10%;
+  width: 40%;
+  height: 40%;
 }
 
 .intro {
   color: #ede5df;
-  font-size: 50px;
+  font-size: 70px;
   margin-bottom: 10px;
 }
 

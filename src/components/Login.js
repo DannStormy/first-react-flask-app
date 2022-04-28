@@ -1,5 +1,4 @@
-import { React } from 'react';
-
+import { React, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
 import { useFormik } from 'formik';
@@ -7,10 +6,10 @@ import { useFormik } from 'formik';
 import { JournalText } from 'react-bootstrap-icons';
 import { Navbar, Container, Nav } from 'react-bootstrap'
 
+import { Loading } from './SpinningLoader';
 
 const validate = values => {
     const errors = {};
-
     if (!values.username) {
         errors.username = 'Required!';
     } else if (values.username.length > 20) {
@@ -27,6 +26,23 @@ const validate = values => {
 
 export default function Login() {
     const navigate = useNavigate();
+    const [loading, setLoading] = useState({
+        load: false,
+        disable: false
+    })
+
+    // const handleClick = () => {
+    //     setLoading({
+    //         load: true,
+    //         disable: true
+    //     })
+    //     setTimeout(() => {
+    //         setLoading({
+    //             load: false,
+    //             disable: false
+    //         })
+    //     }, 5000);
+    // };
     const formik = useFormik({
         initialValues: {
             username: '',
@@ -38,6 +54,16 @@ export default function Login() {
                 username: values.username,
                 password: values.password
             }
+            setLoading({
+                load: true,
+                disable: true
+            })
+            setTimeout(() => {
+                setLoading({
+                    load: false,
+                    disable: false
+                })
+            }, 3000);
             fetch(`${process.env.REACT_APP_SERVER_URL}/api/login`, {
                 method: 'POST',
                 headers: {
@@ -97,7 +123,9 @@ export default function Login() {
                     <div className="error">{formik.errors.password}</div>
                 ) : null}
                 <br />
-                <button type="submit">LOGIN</button>
+                <button disabled={loading.disable} type="submit">LOGIN</button>
+                <br />
+                {loading.load ? <Loading /> : null}
             </form>
         </>
 

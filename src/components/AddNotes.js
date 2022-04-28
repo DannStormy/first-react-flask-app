@@ -4,17 +4,31 @@ import { Form, Button } from 'react-bootstrap';
 
 
 import Navigation from "./Navbar";
-
+import { Loading } from "./SpinningLoader";
 export const AddNotes = () => {
     const token = localStorage.getItem("token")
     const [note, addNote] = useState("")
     const [status, setStatus] = useState(false)
+    const [loading, setLoading] = useState({
+        load: false,
+        disable: false
+    })
     const navigate = useNavigate()
     const handleSubmit = (e) => {
         const data = {
             note: note,
             status: status
         }
+        setLoading({
+            load: true,
+            disable: true
+        })
+        setTimeout(() => {
+            setLoading({
+                load: false,
+                disable: false
+            })
+        }, 3000);
         fetch(`${process.env.REACT_APP_SERVER_URL}/api/addnote`, {
             method: 'POST',
             headers: {
@@ -64,6 +78,8 @@ export const AddNotes = () => {
                         'fontSize': '14px'
                     }}
                     onClick={handleSubmit}>CREATE NOTE</Button>
+                <br />
+                {loading.load ? <Loading /> : null}
             </Form>
         </>
     )
