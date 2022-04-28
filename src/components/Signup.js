@@ -90,7 +90,9 @@ export default function SignupForm() {
                 .then(data => {
                     alert(data.msg);
                     if (data.msg === 'Registered Successfully') {
-                        navigate('/login')
+                        localStorage.setItem("token", data.access_token)
+                        localStorage.setItem("user", data.username)
+                        navigate('/mynotes')
                     }
                 })
                 .catch((error) => {
