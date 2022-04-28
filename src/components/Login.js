@@ -30,19 +30,6 @@ export default function Login() {
         load: false,
         disable: false
     })
-
-    // const handleClick = () => {
-    //     setLoading({
-    //         load: true,
-    //         disable: true
-    //     })
-    //     setTimeout(() => {
-    //         setLoading({
-    //             load: false,
-    //             disable: false
-    //         })
-    //     }, 5000);
-    // };
     const formik = useFormik({
         initialValues: {
             username: '',
@@ -63,7 +50,7 @@ export default function Login() {
                     load: false,
                     disable: false
                 })
-            }, 3000);
+            }, 5000);
             fetch(`${process.env.REACT_APP_SERVER_URL}/api/login`, {
                 method: 'POST',
                 headers: {

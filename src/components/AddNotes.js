@@ -28,7 +28,7 @@ export const AddNotes = () => {
                 load: false,
                 disable: false
             })
-        }, 3000);
+        }, 5000);
         fetch(`${process.env.REACT_APP_SERVER_URL}/api/addnote`, {
             method: 'POST',
             headers: {
@@ -77,6 +77,7 @@ export const AddNotes = () => {
                         'color': '#9e834b',
                         'fontSize': '14px'
                     }}
+                    disabled={loading.disable}
                     onClick={handleSubmit}>CREATE NOTE</Button>
                 <br />
                 {loading.load ? <Loading /> : null}

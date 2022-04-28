@@ -78,7 +78,7 @@ export default function SignupForm() {
                     load: false,
                     disable: false
                 })
-            }, 3000);
+            }, 5000);
             fetch(`${process.env.REACT_APP_SERVER_URL}/api/sign-up`, {
                 method: 'POST',
                 headers: {
@@ -189,7 +189,7 @@ export default function SignupForm() {
                     <div className="error">{formik.errors.retypePassword}</div>
                 ) : null}
                 <br />
-                <button type="submit">SUBMIT</button>
+                <button disabled={loading.disable} type="submit">SUBMIT</button>
                 <br />
                 {loading.load ? <Loading /> : null}
             </form>
