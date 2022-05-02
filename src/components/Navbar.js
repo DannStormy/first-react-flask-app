@@ -1,10 +1,14 @@
 import { Navbar, Container, Nav } from 'react-bootstrap'
 import { JournalText } from 'react-bootstrap-icons';
-import { React } from 'react';
+import { React, useState } from 'react';
 
 import LogoutButton from './LogoutButton';
 
 export default function Navigation() {
+    const [currentTime] = useState({
+        hour: new Date().getHours(),
+        user: localStorage.getItem("user")
+    })
     return (
         <>
             <Navbar collapseOnSelect expand="lg" className="color-nav">
@@ -18,7 +22,9 @@ export default function Navigation() {
                             <Nav.Link style={{ 'color': '#463932' }} href="/addnote">ADD NOTE</Nav.Link>
                         </Nav>
                         <Navbar.Text className="justify-content-end">
-                            <a style={{ 'color': '#463932' }} href="/login">Hello, {localStorage.getItem("user")}</a>
+                            <a style={{ 'color': '#463932' }} href="/login">{currentTime.hour < 12 ? "Good morning"
+                                : currentTime.hour < 18 ? "Good afternoon"
+                                    : "Good evening"}, {currentTime.user}</a>
                         </Navbar.Text>
                         <LogoutButton />
                     </Navbar.Collapse>

@@ -88,11 +88,13 @@ export default function SignupForm() {
             })
                 .then(data => data.json())
                 .then(data => {
+                    console.log(data)
                     alert(data.msg);
                     if (data.msg === 'Registered Successfully') {
                         localStorage.setItem("token", data.access_token)
                         localStorage.setItem("user", data.username)
-                        navigate('/mynotes')
+                        navigate('/notesfeed')
+
                     }
                 })
                 .catch((error) => {

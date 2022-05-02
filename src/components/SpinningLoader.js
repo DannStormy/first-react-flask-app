@@ -2,6 +2,6 @@ import { Spinner } from 'react-bootstrap'
 
 export const Loading = () => {
     return (
-        <Spinner animation="grow" style={{ 'backgroundColor': '#9e834b', 'margin-top': '8px' }} />
+        <Spinner animation="grow" style={{ 'backgroundColor': '#9e834b', 'marginTop': '8px' }} />
     )
 }
